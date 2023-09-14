@@ -7,7 +7,6 @@ terraform {
   }
 }
 
-# Configure the Microsoft Azure Provider
 provider "azurerm" {
   subscription_id = "7a9d1223-2ddc-4942-8531-4aa56719aa8b"
   features {}
@@ -79,7 +78,6 @@ resource "azurerm_linux_virtual_machine" "terra-demo-vm1" {
     version   = "latest"
   }
 
-  # Add security group for VM1
   resource "azurerm_network_security_group" "vm1" {
     name                = "vm1-nsg"
     resource_group_name = azurerm_resource_group.terra-demo.name
